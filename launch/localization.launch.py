@@ -9,8 +9,9 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 def generate_launch_description():
+    pkg_name = 'localization_server'
     map_file_name = 'turtle_eight_columns.yaml'
-    map_file_path = os.path.join(get_package_share_directory('map_server'), 'config', map_file_name)
+    map_file_path = os.path.join(get_package_share_directory(pkg_name), 'config', map_file_name)
 
     map_server_node = Node(
             package='nav2_map_server',
@@ -20,8 +21,9 @@ def generate_launch_description():
             parameters=[{'use_sim_time': True}, 
                         {'yaml_filename':map_file_path}])
 
-    amcl_config_file_name = 'amcl_config.yaml'
-    amcl_config_file_path = os.path.join(get_package_share_directory('map_server'), 'config', amcl_config_file_name)
+    # amcl_config_file_name = 'amcl_config.yaml'
+    amcl_config_file_name = 'amcl_config_initialized.yaml'
+    amcl_config_file_path = os.path.join(get_package_share_directory(pkg_name), 'config', amcl_config_file_name)
     amcl_node = Node(
             package='nav2_amcl',
             executable='amcl',
