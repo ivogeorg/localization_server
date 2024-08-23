@@ -37,7 +37,7 @@ Note:
 ##### 3. Command line
 
 1. `ros2 topic echo /clicked_point`.
-2. In Rviz2, click **Publish Point**, the point will be published to the `/clicked_point` topic.
+2. In Rviz2, click **Publish Point**, the point will be published to the `/clicked_point` topic. Note that this point is only {x, y, z}, without any rotation.
 3. Publish to the `/initialpoint` topic published by `amcl` as follows, optionally populating with the echoed data:
    ```
    ros2 topic pub -1 /initialpose geometry_msgs/msg/PoseWithCovarianceStamped "{header: {stamp: {sec: 0}, frame_id: 'map'}, pose: {pose: {position: {x: 0.2, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}}"
@@ -55,7 +55,8 @@ Note:
         ],
     },
    ```
-4. This is an interactive solution. When the node is running, selecting a point with **Publish Point** will populate the initial pose.
+4. Note that the first `initial_pose_pub` is the name of the _executable_ and what is used in the launch file.
+5. This is an interactive solution. When the node is running, selecting a point with **Publish Point** will populate the initial pose.
 
 
 
