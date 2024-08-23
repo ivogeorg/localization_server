@@ -61,3 +61,15 @@ Note:
 
 
 #### Global localization
+
+1. Increase the number of particles as in [amcl_config_global.yaml](config/amcl_config_global.yaml). Change the name in the launch file.
+2. Recompile.
+3. Launch the localization.
+4. Pick a pose estimate.
+5. Now execute:
+   ```
+   ros2 service call /reinitialize_global_localization std_srvs/srv/Empty
+   ```
+![Global localization](assets/global_localization.png)  
+
+

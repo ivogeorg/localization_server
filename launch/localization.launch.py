@@ -21,7 +21,9 @@ def generate_launch_description():
             parameters=[{'use_sim_time': True}, 
                         {'yaml_filename':map_file_path}])
 
-    amcl_config_file_name = 'amcl_config.yaml'
+    # amcl_config_file_name = 'amcl_config.yaml'
+    # For global localizatoin:
+    amcl_config_file_name = 'amcl_config_global.yaml'
     # With initial location in the config file:
     # amcl_config_file_name = 'amcl_config_initialized.yaml'
     amcl_config_file_path = os.path.join(get_package_share_directory(pkg_name), 'config', amcl_config_file_name)
