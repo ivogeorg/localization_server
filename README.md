@@ -55,7 +55,7 @@ Note:
         ],
     },
    ```
-4. Note that the first `initial_pose_pub` is the name of the _executable_ and what is used in the launch file.
+4. Note that the first `initial_pose_pub` is the name of the _executable_ and what is used in the [launch file](https://github.com/ivogeorg/localization_server/blob/c4903b12e51a7badb2c03291d2ac2a9fbba5628c/launch/init_robot.launch.py).
 5. This is an interactive solution. When the node is running, selecting a point with **Publish Point** will populate the initial pose.
 
 
